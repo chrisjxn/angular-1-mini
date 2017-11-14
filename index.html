@@ -11,8 +11,11 @@
 
 <body ng-controller="mainCtrl">
     <h1>My Friends</h1>
-    <div ng-repeat="friend in friends">
+    <input ng-model="newFriend"/>
+    <button ng-click="add(newFriend)">Add Friend</button>
+    <div ng-repeat="friend in friends track by $index">
         <p>{{ friend }}</p>
+        <button ng-click="delete(friend)">Delete</button>
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.6/angular.js"></script>
